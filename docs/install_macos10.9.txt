@@ -1,0 +1,14 @@
+Install:
+
+./configure
+make
+sudo make install
+
+- autoconf
+- automake
+- pkg-config
+    (./configure --with-internal-glib)
+- libcurl
+- libevent
+- intltool
+- gettext
