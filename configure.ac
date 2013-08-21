@@ -4,7 +4,7 @@ dnl         "Z" for unsupported trunk builds,
 dnl         "0" for stable, supported releases
 dnl these should be the only two lines you need to change
 m4_define([user_agent_prefix],[0.00-])
-m4_define([peer_id_prefix],[-SBOO1Z-])
+m4_define([peer_id_prefix],[-SB001Z-])
 
 AC_INIT([sibsync],[user_agent_prefix],[https://github.com/RaoulDebaze/TransmissionSync/issues])
 AC_SUBST(USERAGENT_PREFIX,[user_agent_prefix])
