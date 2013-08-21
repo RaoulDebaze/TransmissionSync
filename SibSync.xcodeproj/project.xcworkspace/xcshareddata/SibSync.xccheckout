@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5DC55CFD-8A98-4A0B-9D87-0B1371F459B9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SibSync</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>04D17711-41FA-4636-8F6B-B8E3AAA93057</key>
+		<string>https://github.com/RaoulDebaze/TransmissionSync.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SibSync/SibSync.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>04D17711-41FA-4636-8F6B-B8E3AAA93057</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/RaoulDebaze/TransmissionSync.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>04D17711-41FA-4636-8F6B-B8E3AAA93057</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>04D17711-41FA-4636-8F6B-B8E3AAA93057</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TransmissionSync</string>
+		</dict>
+	</array>
+</dict>
+</plist>

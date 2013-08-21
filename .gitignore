@@ -1,5 +1,6 @@
-# Linux tmp files
+# OS specific files
 *.swp
+.DS_Store
 
 # Object files
 *.o
