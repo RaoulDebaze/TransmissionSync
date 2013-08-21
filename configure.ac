@@ -15,7 +15,7 @@ m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 AC_CONFIG_MACRO_DIR([m4])
 
 dnl AM_CONFIG_HEADER(config.h)
-AC_CONFIG_SRCDIR(sibsync/sibsync.h)
+AC_CONFIG_SRCDIR(sibsync/sibsync.c)
 AM_INIT_AUTOMAKE([1.9 tar-pax no-dist-gzip dist-xz])
 LT_INIT
 
@@ -473,21 +473,21 @@ AC_ARG_ENABLE([daemon],
 AM_CONDITIONAL([BUILD_DAEMON],[test "x$build_daemon" = "xyes"])
 
 
-if test "x$build_mac" = "xyes" ; then
-    # Make sure the proper Mac SDK is installed
-    if test ! -d /Developer/SDKs/MacOSX10.5.sdk; then
-      cat << EOF
-You need to install the Mac OS X 10.5 SDK in order to build Transmission
-with --enable-mac:
-  Get your Xcode CD or package
-  Restart the install
-  When it gets to "Installation Type", select "Customize"
-  Select "Mac OS X 10.5 SDK" under "Cross Development"
-  Finish the install.
-EOF
-      exit 1
-    fi
-fi
+#if test "x$build_mac" = "xyes" ; then
+#    # Make sure the proper Mac SDK is installed
+#    if test ! -d /Developer/SDKs/MacOSX10.5.sdk; then
+#      cat << EOF
+#You need to install the Mac OS X 10.5 SDK in order to build Transmission
+#with --enable-mac:
+#  Get your Xcode CD or package
+#  Restart the install
+#  When it gets to "Installation Type", select "Customize"
+#  Select "Mac OS X 10.5 SDK" under "Cross Development"
+#  Finish the install.
+#EOF
+#      exit 1
+#    fi
+#fi
 if test "x$have_darwin" = "xyes"; then
     AC_DEFINE([HAVE_DARWIN], 1)
     AC_DEFINE([SYS_DARWIN], 1)
@@ -502,32 +502,7 @@ dnl
 dnl  Generate the output
 
 AC_CONFIG_FILES([Makefile
-                 transmission-gtk.spec
-                 cli/Makefile
-                 daemon/Makefile
-                 extras/Makefile
-                 libtransmission/Makefile
-                 utils/Makefile
-                 third-party/Makefile
-                 third-party/dht/Makefile
-                 third-party/libutp/Makefile
-                 third-party/libnatpmp/Makefile
-                 third-party/miniupnp/Makefile
-                 macosx/Makefile
-                 gtk/Makefile
-                 gtk/icons/Makefile
-                 qt/config.pri
-                 web/Makefile
-                 web/images/Makefile
-                 web/style/Makefile
-                 web/style/jqueryui/Makefile
-                 web/style/jqueryui/images/Makefile
-                 web/style/transmission/Makefile
-                 web/style/transmission/images/Makefile
-                 web/style/transmission/images/buttons/Makefile
-                 web/javascript/Makefile
-                 web/javascript/jquery/Makefile
-                 po/Makefile.in])
+                 sibsync/Makefile.in])
 
 AC_OUTPUT
 

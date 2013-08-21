@@ -6,10 +6,15 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		F406093A17C54642007EABB7 /* sibsync.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = sibsync.c; path = sibsync/sibsync.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		F4ACBB3417C53E20000DEDE9 = {
 			isa = PBXGroup;
 			children = (
+				F406093A17C54642007EABB7 /* sibsync.c */,
 			);
 			sourceTree = "<group>";
 		};
