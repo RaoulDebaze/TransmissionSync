@@ -32,6 +32,13 @@
 /configure
 /config.h
 /config.h.in
+/libtool
+/ltmain.sh
+/m4/libtool.m4
+/m4/ltoptions.m4
+/m4/ltsugar.m4
+/m4/ltversion.m4
+/m4/lt~obsolete.m4
 /stamp-h1
 Makefile
 Makefile.in

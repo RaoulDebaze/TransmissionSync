@@ -10,9 +10,12 @@ AC_INIT([sibsync],[user_agent_prefix],[https://github.com/RaoulDebaze/Transmissi
 AC_SUBST(USERAGENT_PREFIX,[user_agent_prefix])
 AC_SUBST(PEERID_PREFIX,[peer_id_prefix])
 
+AC_CONFIG_MACRO_DIR([m4])
+
 AC_CONFIG_SRCDIR(sibsync/sibsync.c)
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
+LT_INIT
 
 AM_GNU_GETTEXT([external])
 
