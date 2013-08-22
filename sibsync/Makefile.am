@@ -3,4 +3,4 @@
 # gives unlimited permission to copy, distribute and modify it.
 
 bin_PROGRAMS = sibsync
-sibsync_SOURCES = main.c
+sibsync_SOURCES = sibsync.c

@@ -1,1 +1,0 @@
-Check for "Make sure the proper Mac SDK is installed" unabled

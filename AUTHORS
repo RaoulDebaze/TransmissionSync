@@ -3,13 +3,3 @@ https://github.com/RaoulDebaze/TransmissionSync
 
 Lead Developers
   Raoul Debaze <raoul.debaze@laposte.net>
-
-
-Third-Party Resources:
-  The Transmission Project Development Team for Transmission. <http://www.transmissionbt.com/>
-  Nick Mathewson and Niels Provos for libevent. <http://monkey.org/~provos/libevent/>
-  Greg Hazel of BitTorrent Inc. for libutp. <https://github.com/bittorrent/libutp>
-  Thomas Bernard for MiniUPnP and libnatpmp. <http://miniupnp.tuxfamily.org/>
-  The Growl Development Team for Growl. <http://growl.info/>
-  Andy Matuschak for Sparkle. <http://sparkle.andymatuschak.org/>
-  Bryan D K Jones for VDKQueue. <https://github.com/bdkjones/VDKQueue>
