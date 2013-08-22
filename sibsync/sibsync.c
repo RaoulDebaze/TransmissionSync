@@ -13,8 +13,9 @@
 #include <errno.h>
 #include <stdio.h> /* printf */
 #include <stdlib.h> /* exit, atoi */
+#include <libintl.h>	/* For translation */
 
 main()
 {
-    printf("Hello World\n");
+    printf("Hello World!\n");
 }

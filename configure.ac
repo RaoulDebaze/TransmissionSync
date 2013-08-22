@@ -11,9 +11,10 @@ AC_SUBST(USERAGENT_PREFIX,[user_agent_prefix])
 AC_SUBST(PEERID_PREFIX,[peer_id_prefix])
 
 AC_CONFIG_SRCDIR(sibsync/sibsync.c)
+AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 
-AC_CONFIG_HEADERS([config.h])
+AM_GNU_GETTEXT([external])
 
 AC_PROG_CC
 AC_PROG_CXX
@@ -30,6 +31,7 @@ AC_C_INLINE
 
 AC_HEADER_STDC
 AC_HEADER_TIME
+
 
 dnl ----------------------------------------------------------------------------
 dnl
@@ -55,7 +57,7 @@ dnl ----------------------------------------------------------------------------
 dnl
 dnl  Generate the output
 
-AC_CONFIG_FILES([Makefile
+AC_CONFIG_FILES([Makefile po/Makefile.in
                  sibsync/Makefile])
 
 AC_OUTPUT
