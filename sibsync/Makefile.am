@@ -2,5 +2,10 @@
 # This Makefile.am is free software; the Free Software Foundation
 # gives unlimited permission to copy, distribute and modify it.
 
-bin_PROGRAMS = sibsync
+bin_PROGRAMS = \
+    sibsync
+
+LDADD = \
+    $(top_builddir)/libtransmission/libtransmission.a
+
 sibsync_SOURCES = sibsync.c

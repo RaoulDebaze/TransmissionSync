@@ -60,7 +60,9 @@ dnl ----------------------------------------------------------------------------
 dnl
 dnl  Generate the output
 
-AC_CONFIG_FILES([Makefile po/Makefile.in
+AC_CONFIG_FILES([Makefile
+                 po/Makefile.in
+                 libtransmission/Makefile
                  sibsync/Makefile])
 
 AC_OUTPUT

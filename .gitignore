@@ -27,6 +27,7 @@
 /autom4te.cache/
 /config.guess
 /config.log
+/config.rpath
 /config.status
 /config.sub
 /configure

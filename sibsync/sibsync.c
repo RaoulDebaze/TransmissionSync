@@ -15,7 +15,59 @@
 #include <stdlib.h> /* exit, atoi */
 #include <libintl.h>	/* For translation */
 
-main()
+#include <fcntl.h> /* open */
+#include <signal.h>
+#ifdef HAVE_SYSLOG
+#include <syslog.h>
+#endif
+#include <unistd.h> /* daemon */
+
+#include <event2/buffer.h>
+
+#include <config.h>
+#include <libtransmission/tr-getopt.h>
+
+#define MY_NAME "SibSync"
+
+static const char *
+getUsage (void)
 {
+    return "SibSync " VERSION
+           "\n"
+           MY_NAME " is a test program\n"
+           "that actualy does nothing.\n"
+           "\n"
+           "Usage: " MY_NAME " [options]";
+}
+
+static const struct tr_option options[] =
+{
+    { 'h', "help", "Display this help", "h", 0, NULL }
+};
+
+static void
+showUsage (void)
+{
+    tr_getopt_usage (MY_NAME, getUsage (), options);
+    exit (0);
+}
+
+main(int argc, char ** argv)
+{
+    int c;
+    const char * optarg;
+
     printf("Hello World!\n");
+
+    /* overwrite settings from the comamndline */
+    tr_optind = 1;
+    while ((c = tr_getopt (getUsage (), argc, (const char**)argv, options, &optarg))) {
+        switch (c) {
+            default:  showUsage ();
+                      break;
+        }
+    }
+
+    printf("Worked?!\n");
+    return 0;
 }
