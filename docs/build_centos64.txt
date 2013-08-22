@@ -4,8 +4,9 @@ $ yum install gcc gcc-c++ m4 make automake libtool gettext openssl-devel
 $ yum install pkgconfig
 $ yum install libevent-devel
 $ yum install intltool
+$ yum install glib2-devel
 
-2. libevent
+2.1. libevent
 
 /!\ libevent >= 2.0.10
 Browse to http://libevent.org/ and get the latest version. 
@@ -14,6 +15,14 @@ $ tar xzf libevent-2.0.18-stable.tar.gz
 $ cd libevent-2.0.18-stable
 $ CFLAGS="-Os -march=native" ./configure && make
 $ make install
+
+2.2 autoconf
+
+/!\ autoconf >= 2.69
+
+2.3 automake
+
+/!\ automake >= 1.11.6
 
 3. Environment
 

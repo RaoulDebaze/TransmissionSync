@@ -12,7 +12,7 @@ AC_SUBST(PEERID_PREFIX,[peer_id_prefix])
 
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 
-AC_CONFIG_MACRO_DIR([m4])
+AC_CONFIG_MACRO_DIR([transmissionbt/m4])
 
 dnl AM_CONFIG_HEADER(config.h)
 AC_CONFIG_SRCDIR(sibsync/sibsync.c)
@@ -501,8 +501,8 @@ dnl ----------------------------------------------------------------------------
 dnl
 dnl  Generate the output
 
-AC_CONFIG_FILES([Makefile
-                 sibsync/Makefile.in])
+AC_CONFIG_FILES([Makefile po/Makefile.in
+                 sibsync/Makefile])
 
 AC_OUTPUT
 
