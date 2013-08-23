@@ -79,6 +79,7 @@ getUsage (void)
 static const struct tr_option options[] =
 {
     { 'e', "logfile", "Dump the log messages to this filename", "e", 1, "<filename>" },
+    { 'g', "config-dir", "Where to look for configuration files", "g", 1, "<path>" },
     { 0, NULL, NULL, NULL, 0, NULL }
 };
 
@@ -136,13 +137,48 @@ pumpLogMessages (FILE * logfile)
     tr_logFreeQueue (list);
 }
 
-main(int argc, char ** argv)
+static const char*
+getConfigDir (int argc, const char ** argv)
 {
     int c;
+    const char * configDir = NULL;
     const char * optarg;
+    const int ind = tr_optind;
 
-    printf("Hello World!\n");
+    while ((c = tr_getopt (getUsage (), argc, argv, options, &optarg))) {
+        if (c == 'g') {
+            configDir = optarg;
+            break;
+        }
+    }
 
+    tr_optind = ind;
+
+    if (configDir == NULL)
+        configDir = tr_getDefaultConfigDir (MY_NAME);
+
+printf(configDir);
+    return configDir;
+}
+
+main(int argc, char ** argv)
+{
+printf('0');
+    int c;
+    const char * optarg;
+    tr_variant settings;
+    bool loaded;
+    const char * configDir = NULL;
+    tr_session * session = NULL;
+
+printf('1');
+    /* load settings from defaults + config file */
+    tr_variantInitDict (&settings, 0);
+    tr_variantDictAddBool (&settings, TR_KEY_rpc_enabled, true);
+    configDir = getConfigDir (argc, (const char**)argv);
+    loaded = tr_sessionLoadSettings (&settings, configDir, MY_NAME);
+
+printf(loaded ? "True" : "False");
     /* overwrite settings from the comamndline */
     tr_optind = 1;
     while ((c = tr_getopt (getUsage (), argc, (const char**)argv, options, &optarg))) {
@@ -153,13 +189,25 @@ main(int argc, char ** argv)
                       else
                           fprintf (stderr, "Couldn't open \"%s\": %s\n", optarg, tr_strerror (errno));
                       break;
+            case 'g': /* handled above */
+                      break;
+
             default:  showUsage ();
                       break;
         }
     }
 
+printf('A\n');
     printMessage (logfile, TR_LOG_INFO, MY_NAME, "Starting...", __FILE__, __LINE__);
-    
+    /* start the session */
+    session = tr_sessionInit ("daemon", configDir, true, &settings);
+    tr_logAddNamedInfo (NULL, "Using settings from \"%s\"", configDir);
+    tr_sessionSaveSettings (session, configDir, &settings);
+
+    printMessage (logfile, TR_LOG_INFO, MY_NAME, "Stoping...", __FILE__, __LINE__);
+    pumpLogMessages (logfile);
+    /* cleanup */
+    tr_variantFree (&settings);
     printf("Worked?!\n");
     return 0;
 }
