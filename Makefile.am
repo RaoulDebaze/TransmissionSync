@@ -24,8 +24,7 @@ SUBDIRS = \
   $(CLI_DIR) \
   $(GTK_DIR) \
   $(MAC_DIR) \
-  web \
-  sibsync
+  web
 
 EXTRA_DIST = \
   qt \

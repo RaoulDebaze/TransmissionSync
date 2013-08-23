@@ -527,7 +527,6 @@ AC_CONFIG_FILES([Makefile
                  web/style/transmission/images/buttons/Makefile
                  web/javascript/Makefile
                  web/javascript/jquery/Makefile
-                 sibsync/Makefile
                  po/Makefile.in])
 
 AC_OUTPUT

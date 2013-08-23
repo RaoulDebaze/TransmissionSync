@@ -8,7 +8,7 @@
 #ifndef __MINIUPNPCSTRINGS_H__
 #define __MINIUPNPCSTRINGS_H__
 
-#define OS_STRING "Linux/2.6.32-358.14.1.el6.x86_64"
+#define OS_STRING "Darwin/13.0.0"
 #define MINIUPNPC_VERSION_STRING ""
 
 #endif
