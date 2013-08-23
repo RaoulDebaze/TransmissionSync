@@ -42,7 +42,8 @@ getUsage (void)
 
 static const struct tr_option options[] =
 {
-    { 'h', "help", "Display this help", "h", 0, NULL }
+    { 'e', "logfile", "Dump the log messages to this filename", "e", 1, "<filename>" },
+    { 0, NULL, NULL, NULL, 0, NULL }
 };
 
 static void
@@ -63,6 +64,8 @@ main(int argc, char ** argv)
     tr_optind = 1;
     while ((c = tr_getopt (getUsage (), argc, (const char**)argv, options, &optarg))) {
         switch (c) {
+            case 'e': printf("Do the logfile thing\n");
+                      break;
             default:  showUsage ();
                       break;
         }
