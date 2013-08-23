@@ -1,0 +1,17 @@
+AM_CPPFLAGS = \
+  -I$(top_srcdir) \
+  -D__TRANSMISSION__ \
+  -DPACKAGE_DATA_DIR=\""$(datadir)"\"
+
+noinst_LIBRARIES = libtransmission.a
+
+noinst_HEADERS = \
+  log.h \
+  transmission.h \
+  tr-getopt.h \
+  utils.h
+
+libtransmission_a_SOURCES = \
+  log.c \
+  tr-getopt.c \
+  utils.c

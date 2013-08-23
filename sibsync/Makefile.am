@@ -3,9 +3,9 @@
 # gives unlimited permission to copy, distribute and modify it.
 
 bin_PROGRAMS = \
-    sibsync
+    sibsync-daemon
 
 LDADD = \
     $(top_builddir)/libtransmission/libtransmission.a
 
-sibsync_SOURCES = sibsync.c
+sibsync_daemon_SOURCES = sibsync.c
