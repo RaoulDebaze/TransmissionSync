@@ -13,7 +13,6 @@
 #include <errno.h>
 #include <stdio.h> /* printf */
 #include <stdlib.h> /* exit, atoi */
-#include <libintl.h>	/* For translation */
 
 #include <fcntl.h> /* open */
 #include <signal.h>
@@ -24,10 +23,12 @@
 
 #include <event2/buffer.h>
 
-#include <config.h>
 #include <libtransmission/transmission.h>
 #include <libtransmission/tr-getopt.h>
 #include <libtransmission/log.h>
+#include <libtransmission/utils.h>
+#include <libtransmission/variant.h>
+#include <libtransmission/version.h>
 
 // I guess it is necessary for OS with systemd like Fedora
 #ifdef USE_SYSTEMD_DAEMON
