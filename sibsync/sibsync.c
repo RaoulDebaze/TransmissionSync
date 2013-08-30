@@ -200,14 +200,14 @@ printf(loaded ? "True" : "False");
 printf('A\n');
     printMessage (logfile, TR_LOG_INFO, MY_NAME, "Starting...", __FILE__, __LINE__);
     /* start the session */
-    session = tr_sessionInit ("daemon", configDir, true, &settings);
-    tr_logAddNamedInfo (NULL, "Using settings from \"%s\"", configDir);
-    tr_sessionSaveSettings (session, configDir, &settings);
+    //session = tr_sessionInit ("daemon", configDir, true, &settings);
+    //tr_logAddNamedInfo (NULL, "Using settings from \"%s\"", configDir);
+    //tr_sessionSaveSettings (session, configDir, &settings);
 
     printMessage (logfile, TR_LOG_INFO, MY_NAME, "Stoping...", __FILE__, __LINE__);
-    pumpLogMessages (logfile);
+    //pumpLogMessages (logfile);
     /* cleanup */
-    tr_variantFree (&settings);
+    //tr_variantFree (&settings);
     printf("Worked?!\n");
     return 0;
 }
